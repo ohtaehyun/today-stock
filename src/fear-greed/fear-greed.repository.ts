@@ -13,4 +13,8 @@ export class FearGreedRepository {
   async upsertOne(fearGreed: FearGreed) {
     await this.repository.upsert(fearGreed, ['fearGreedTimestamp'])
   }
+
+  async findLatestOne() {
+    return await this.repository.findOne({ where: {}, order: { fearGreedTimestamp: 'DESC' } });
+  }
 }

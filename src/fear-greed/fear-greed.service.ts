@@ -32,4 +32,13 @@ export class FearGreedService {
 
     await this.fearGreedRepository.upsertOne(fg);
   }
+
+  async getLatestFearGreed(): Promise<FearGreed> {
+    const fearGreed = await this.fearGreedRepository.findLatestOne();
+    if (!fearGreed) {
+      throw new Error('FearGreedNotFounded');
+    }
+
+    return fearGreed;
+  }
 }

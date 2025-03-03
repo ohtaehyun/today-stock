@@ -5,6 +5,7 @@ import { FearGreedModule } from './fear-greed/fear-greed.module';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import * as path from 'path';
+import { ScheduleModule } from '@nestjs/schedule';
 
 @Module({
   imports: [
@@ -25,6 +26,7 @@ import * as path from 'path';
         rejectUnauthorized: false
       },
     }),
+    ScheduleModule.forRoot(),
     FearGreedModule
   ],
   controllers: [AppController],

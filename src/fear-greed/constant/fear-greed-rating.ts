@@ -1,0 +1,7 @@
+export enum FEAR_GREED_RATING {
+  EXTREME_FEAR = 1,
+  FEAR = 2,
+  NURTRAL = 3,
+  GREED = 4,
+  EXTREME_GREED = 5,
+}

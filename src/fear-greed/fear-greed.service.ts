@@ -15,7 +15,7 @@ export class FearGreedService {
     this.FEAR_GREED_SCHEDULE_URL = configService.get<string>('FEAR_GREED_SCHEDULE_URL', '');
   }
 
-  @Cron('* * * * *')
+  @Cron('*/15 * * * *')
   async scheduleCreateFearGreed() {
     const { data: { fear_and_greed } } = await axios.get(this.FEAR_GREED_SCHEDULE_URL, {
       headers: {

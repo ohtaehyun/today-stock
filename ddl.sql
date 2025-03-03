@@ -10,7 +10,7 @@ CREATE TABLE fear_greed
 CREATE TABLE ticker
 (
   ticker_id serial4 PRIMARY KEY,
-  ticker varchar NOT NULL,
+  ticker varchar NOT NULL UNIQUE,
   created_at timestamptz NOT NULL DEFAULT NOW()
 );
 
@@ -24,5 +24,6 @@ CREATE TABLE stock_history
   low_price numeric NOT NULL,
   close_price numeric NOT NULL,
   volume int8 NOT NULL,
+  created_at timestamptz NOT NULL DEFAULT NOW(),
   constraint stock_history_pk PRIMARY KEY(ticker_id, trade_date, candle_type)
 );

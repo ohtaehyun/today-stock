@@ -6,6 +6,8 @@ import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import * as path from 'path';
 import { ScheduleModule } from '@nestjs/schedule';
+import { StockHistoryModule } from './stock-history/stock-history.module';
+import { TickerModule } from './ticker/ticker.module';
 
 @Module({
   imports: [
@@ -27,7 +29,9 @@ import { ScheduleModule } from '@nestjs/schedule';
       },
     }),
     ScheduleModule.forRoot(),
-    FearGreedModule
+    FearGreedModule,
+    StockHistoryModule,
+    TickerModule
   ],
   controllers: [AppController],
   providers: [AppService],

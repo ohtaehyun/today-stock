@@ -17,4 +17,8 @@ export class TickerRepository {
   async findOneByTickerName(tickerName: string): Promise<Ticker | null> {
     return await this.repository.findOneBy({ ticker: tickerName });
   }
+
+  async find(): Promise<Ticker[]> {
+    return await this.repository.find();
+  }
 }

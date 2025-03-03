@@ -8,6 +8,7 @@ import * as path from 'path';
 import { ScheduleModule } from '@nestjs/schedule';
 import { StockHistoryModule } from './stock-history/stock-history.module';
 import { TickerModule } from './ticker/ticker.module';
+import { YahooFinanceModule } from './yahoo-finance/yahoo-finance.module';
 
 @Module({
   imports: [
@@ -31,7 +32,8 @@ import { TickerModule } from './ticker/ticker.module';
     ScheduleModule.forRoot(),
     FearGreedModule,
     StockHistoryModule,
-    TickerModule
+    TickerModule,
+    YahooFinanceModule
   ],
   controllers: [AppController],
   providers: [AppService],

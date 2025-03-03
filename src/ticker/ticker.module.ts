@@ -4,7 +4,8 @@ import { TickerController } from './ticker.controller';
 import { TickerRepository } from './ticker.repository';
 
 @Module({
+  controllers: [TickerController],
   providers: [TickerService, TickerRepository],
-  controllers: [TickerController]
+  exports: [TickerRepository],
 })
 export class TickerModule { }
